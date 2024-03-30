@@ -20,3 +20,18 @@ CREATE TABLE figures (
     marker TEXT NOT NULL,
     figure TEXT NOT NULL
 );
+
+CREATE TABLE figures_meta (
+    id SERIAL PRIMARY KEY,
+    figure_id INTEGER REFERENCES figures(id),
+    key VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE user_figure_meta (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    figure_id INTEGER REFERENCES figures(id),
+    key VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL
+);
