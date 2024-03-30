@@ -36,7 +36,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"data": figures,
 			"metadata": gin.H{
-				"paramsParsed": params,
+				"params": params,
 			},
 		})
 	})
